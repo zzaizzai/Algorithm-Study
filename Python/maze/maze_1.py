@@ -3,7 +3,14 @@ import sys
 from collections import deque
 
 
-""" https://wooono.tistory.com/498"""
+"""
+問題
+N x M の迷路があり、現座標は(1,1)である。
+移動は１回で１座標分できるとする。
+出口は(N,M)であり、与えられた迷路で0が通れない部分、1は通れる部分とする。
+脱出するための最小移動回数を求めよう。
+https://wooono.tistory.com/498
+"""
 
 
 sys.stdin = open("test_1.txt", "r")
