@@ -1,16 +1,17 @@
+"https://www.acmicpc.net/problem/2751"
+
 import sys
 import os
 
 if os.path.exists("input.txt"):
     sys.stdin = open("input.txt", "r")
 
-N = int(input())
+N = int(sys.stdin.readline().rstrip())
 
-nums_set = set()
 
+arr = []
 for i in range(N):
-    nums_set.add(int(input()))
+    arr.append(int(sys.stdin.readline().rstrip()))
 
-
-for value in nums_set:
-    print(value)
+for i in sorted(arr):
+    print(i)
