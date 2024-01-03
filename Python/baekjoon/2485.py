@@ -1,43 +1,25 @@
-# "https://www.acmicpc.net/problem/2485"
-
-# import os
-# import sys
-
-# if os.path.exists("input.txt"):
-#     sys.stdin = open("input.txt", "r")
+"https://www.acmicpc.net/problem/2485"
 
 
-# def insert(num: int, coordinates: list[int]) -> list[int]:
-#     len_list = []
-#     for i in range(len(coordinates) - 1):
-#         len_list.append(coordinates[i + 1] - coordinates[i])
-#     len_value = min(len_list)
-#     coordinates.sort()
+import sys
+from math import gcd
 
-#     if num not in coordinates:
-#         coordinates.append(num)
+N = int(sys.stdin.readline())
 
-#     coordinates.sort()
-#     return coordinates
+a = int(sys.stdin.readline())
 
+arr = []
 
-# N = int(sys.stdin.readline().rstrip())
+for i in range(N-1):
+    num = int(sys.stdin.readline())
+    arr.append(num - a)
+    a = num
 
-# coordinates = []
-# len_list = []
-# results = []
+g = arr[0]
+for j in range(1, len(arr)):
+    g = gcd(g, arr[j])
 
-# for _ in range(N):
-#     coordinates.append(int(sys.stdin.readline().rstrip()))
-
-# for i in range(len(coordinates) - 1):
-#     len_list.append(coordinates[i + 1] - coordinates[i])
-
-# len_value = min(len_list)
-
-# ans = 0
-# for i in range(min(coordinates)+ 1, max(coordinates) ):
-
-#     coordinates = insert(i, coordinates)
-
-# print(coordinates)
+result = 0
+for each in arr:
+    result += each // g - 1
+print(result)
